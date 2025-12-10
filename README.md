@@ -1,87 +1,86 @@
-# React + Vite
+# To-Do List – Gestión de Tareas Full Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación Full Stack para la gestión de tareas, donde los usuarios pueden crear, listar, marcar como completadas, editar y eliminar tareas.
+El backend está construido con Node.js + Express y utiliza PostgreSQL como base de datos alojada en Railway.
 
-Currently, two official plugins are available:
+Tecnologías Utilizadas
+Área	Tecnologías
+Backend	Node.js, Express, CORS, Dotenv, PostgreSQL
+Base de Datos	PostgreSQL en Railway
+Frontend (Pendiente)	HTML, CSS, JavaScript o React
+Control de Versiones	Git + GitHub
+Deployment	Railway
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+--- 
 
-## React Compiler
+## Variables de Entorno (Railway / .env.local)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Debes crear un archivo .env.local o variables en Railway con las siguientes claves:
 
-## Expanding the ESLint configuration
+DB_HOST=tramway.proxy.rlwy.net
+DB_USER=root
+DB_PASSWORD=AXTxLbdYRDhKbCjCcGiuiLkjuWwmuglD
+DB_NAME=railway
+DB_PORT=35810
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
 
-## Despliegue 100% en Netlify
+## Endpoints de la API
+Método	Endpoint	Descripción
+GET	/tasks	Obtener todas las tareas
+POST	/tasks	Crear nueva tarea { title: "" }
+PUT	/tasks/:id/complete	Marcar tarea como completada
+DELETE	/tasks/:id	Eliminar una tarea
 
-1. Verifica que el archivo `netlify.toml` existe en la raíz de `frontend`:
-	```toml
-	[build]
-	  publish = "dist"
-	  command = "npm run build"
-	[[redirects]]
-	  from = "/api/*"
-	  to = "https://tu-backend-url.netlify.app/:splat"
-	  status = 200
-	```
+Ejemplo de JSON creado:
 
-2. El archivo `public/_redirects` debe contener:
-	```
-	/*    /index.html   200
-	```
+{
+  "id": 1,
+  "title": "Mi primera tarea",
+  "completed": false
+}
 
-3. El archivo `vite.config.js` debe tener:
-	```js
-	export default defineConfig({
-	  base: './',
-	  plugins: [react()],
-	})
-	```
+## Cómo Ejecutar el Backend Localmente
 
-4. En `index.html`, los paths deben ser relativos:
-	```html
-	<link rel="icon" type="image/svg+xml" href="vite.svg" />
-	<script type="module" src="src/main.jsx"></script>
-	```
+Clona el repositorio:
 
-5. Scripts en `package.json`:
-	```json
-	"build": "vite build"
-	```
+git clone https://github.com/sebastianmanriquetorres/todo_list.git
+cd todo_list/backend
 
-6. Pasos para desplegar:
-	- Sube el repo a GitHub.
-	- En Netlify, selecciona "New site from Git" y conecta tu repo.
-	- Build command: `npm run build`
-	- Publish directory: `dist`
 
-7. Para probar localmente:
-	```powershell
-	cd frontend
-	npm install
-	npm run build
-	npm run preview
-	```
+Instala dependencias:
 
-8. Si usas rutas en React Router, la redirección SPA ya está lista.
-
-9. Si tu backend está en otro dominio, ajusta el proxy en Vite o usa funciones serverless en Netlify.
-
-**Despliegue en GitHub Pages**
-
-- **Resumen**: Este repositorio ahora incluye un flujo de GitHub Actions que construye la carpeta `frontend` y publica `frontend/dist` en la rama `gh-pages`.
-- **Configuración importante**: `vite.config.js` tiene `base` establecido en `/backend-todolist/` para servir correctamente los assets desde `https://<usuario>.github.io/backend-todolist/`.
-- **Qué hace el workflow**: `.github/workflows/deploy-frontend-gh-pages.yml` se dispara en `push` sobre `main`, ejecuta `npm ci` y `npm run build` en `frontend`, y publica `frontend/dist` en la rama `gh-pages` con `peaceiris/actions-gh-pages`.
-- **Acciones que debes realizar**:
-	1. Asegúrate de subir (commit + push) los cambios al repositorio (`netlify.toml`, `_headers`, `_redirects`, `vite.config.js`, workflow).
-	2. Espera a que el workflow termine (GitHub → Actions → Deploy Frontend to GitHub Pages).
-	3. Abre la URL `https://LuyerPerez.github.io/backend-todolist/` (puede tardar unos minutos la primera vez).
-- **Comandos locales**:
-``powershell
-cd frontend
 npm install
-npm run build
-``
+
+
+Crea tu archivo .env.local y agrega tus credenciales.
+
+Ejecuta el servidor:
+
+npm run dev
+
+## Deploy en Railway
+
+El backend está configurado para funcionar automáticamente con las variables de entorno.
+
+Solo necesitas:
+
+Conectar el repositorio
+
+Agregar las variables de entorno
+
+Railway deploya automáticamente
+
+## Próximos pasos
+
+- Crear interfaz web (frontend)
+- Conectar el frontend con el backend mediante fetch/axios
+- Estilizar con CSS o frameworks (Tailwind/Bootstrap)
+
+## Autor
+
+Desarrollado por Sebastián Manrique como práctica de desarrollo Full Stack.
+
+GitHub: https://github.com/sebastianmanriquetorres
+Netlifly: https://proyecto-sebastian-manrique.netlify.app
+Render: https://bd-practicas-despliegue.onrender.com/
