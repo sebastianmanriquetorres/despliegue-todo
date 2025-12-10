@@ -1,0 +1,25 @@
+:root {
+  /* CYBER NEON PALETTE */
+  --color-bg-dark: #dbdbdb; /* Fondo principal muy oscuro */
+  --color-panel-bg: #1a1e26; /* Fondo de tarjetas */
+  --color-neon-magenta: #ff00ff; /* Color de acento Magenta */
+  --color-neon-cyan: #00ffff; /* Color de acento Cian */
+  --color-text-main: #e0e0e0; 
+  --color-text-sub: #8f9bb3;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-dark);
+
+  /* Resto de estilos base (a, button, input) se mantienen, 
+     pero las clases de componente los sobrescribirán. */
+}
+
+/* Base de Botones y Entradas */
+button, input, textarea {
+  border: none;
+  border-radius: 4px; /* Más cuadrados para el look futurista */
+  padding: 0.75em 1em;
+  background-color: var(--color-panel-bg);
+  color: var(--color-text-main);
+}

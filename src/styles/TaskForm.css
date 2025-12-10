@@ -1,0 +1,6 @@
+.task-form { display:flex; flex-direction:column; gap:0.5rem }
+.input, .textarea { width:100%; padding:0.6rem 0.8rem; border-radius:10px; border:1px solid #ddd; background:#f0f0f0; color:#1f2937 }
+.textarea { min-height:72px }
+.add-button { background:linear-gradient(90deg,#0ea5a1,#0891b2); color:#02121a; border:none; padding:0.55rem 0.85rem; border-radius:10px; font-weight:700 }
+.add-button:disabled{ opacity:0.6 }
+.task-form .input::placeholder, .task-form .textarea::placeholder { color: #999 }
