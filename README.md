@@ -40,12 +40,6 @@ Ejemplo de JSON creado:
   "completed": false
 }
 
-## Cómo Ejecutar el Backend Localmente
-
-Clona el repositorio:
-
-git clone https://github.com/sebastianmanriquetorres/todo_list.git
-cd todo_list/backend
 
 
 Instala dependencias:
@@ -81,6 +75,6 @@ Railway deploya automáticamente
 
 Desarrollado por Sebastián Manrique como práctica de desarrollo Full Stack.
 
-GitHub: https://github.com/sebastianmanriquetorres
-Netlifly: https://proyecto-sebastian-manrique.netlify.app
-Render: https://bd-practicas-despliegue.onrender.com/
+- GitHub: https://github.com/sebastianmanriquetorres
+- Netlifly: https://proyecto-sebastian-manrique.netlify.app
+- Render: https://bd-practicas-despliegue.onrender.com/
