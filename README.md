@@ -1,6 +1,6 @@
 # ✅ To-Do List – Gestión de Tareas Full Stack
 
-Este proyecto es una **aplicación Full Stack** para la gestión de tareas (To-Do List), desarrollada como práctica académica y técnica. Permite a los usuarios **crear, listar, editar, marcar como completadas y eliminar tareas**, siguiendo una arquitectura cliente-servidor y buenas prácticas de desarrollo.
+Este proyecto es una **aplicación Full Stack** para la gestión de tareas (To-Do List), desarrollada como práctica académica y técnica. El sistema está dividido en **dos repositorios independientes**: uno para el **backend (API REST)** y otro para el **frontend (interfaz web)**, siguiendo una arquitectura desacoplada. Permite a los usuarios **crear, listar, editar, marcar como completadas y eliminar tareas**, siguiendo una arquitectura cliente-servidor y buenas prácticas de desarrollo.
 
 El **backend** está construido con **Node.js y Express**, utiliza **PostgreSQL** como sistema de base de datos y se encuentra desplegado en **Railway**. El **frontend** está planteado para ser desarrollado y conectado posteriormente.
 
@@ -30,6 +30,33 @@ El **backend** está construido con **Node.js y Express**, utiliza **PostgreSQL*
 
 ---
 
+## 📂 Estructura del Proyecto
+
+### 📁 Repositorio Backend – `back-todo`
+
+```bash
+├── app.py
+├── db.py
+├── requirements.txt
+├── runtime.txt
+├── Procfile
+├── .env
+└── README.md
+```
+
+### 📁 Repositorio Frontend – `despliegue-todo`
+
+```bash
+├── public
+├── src
+├── index.html
+├── package.json
+├── vite.config.js
+├── netlify.toml
+└── README.md
+```
+
+---
 
 ## 🔐 Variables de Entorno
 
@@ -94,26 +121,40 @@ El servidor se iniciará correctamente y quedará listo para recibir peticiones.
 
 ---
 
-## ☁️ Deploy en Railway
+## ☁️ Deploy Backend (Railway / Render)
 
-El backend está preparado para desplegarse automáticamente en Railway.
+El backend está configurado para ejecutarse correctamente en servicios de nube como **Railway** o **Render**.
 
-Pasos:
+Pasos generales:
 
-1. Conectar el repositorio desde GitHub
+1. Conectar el repositorio **back-todo** desde GitHub
 2. Configurar las variables de entorno
-3. Railway realizará el deploy automáticamente
+3. El servicio realiza el deploy automáticamente
 
 ---
 
-## 🎨 Frontend (Pendiente de Implementación)
+## 🌐 Deploy Frontend (Netlify)
 
-El frontend se desarrollará como siguiente fase del proyecto y permitirá:
+El frontend se encuentra desplegado en **Netlify**, consumiendo la API del backend.
 
-* Interfaz gráfica para la gestión de tareas
-* Consumo de la API mediante **fetch** o **axios**
-* Diseño responsivo
-* Posible implementación con **React**
+Pasos:
+
+1. Conectar el repositorio **despliegue-todo**
+2. Configurar el archivo `netlify.toml`
+3. Netlify realiza el build y deploy automático
+
+---
+
+## 🎨 Frontend
+
+El frontend ya cuenta con una estructura base y despliegue funcional.
+
+Incluye:
+
+* Interfaz web para la gestión de tareas
+* Consumo de la API mediante **fetch**
+* Arquitectura moderna con **Vite**
+* Preparado para escalar a frameworks como **React**
 
 ---
 
